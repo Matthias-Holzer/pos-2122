@@ -1,4 +1,4 @@
-package at.spengergasse.holzer.MicroserviceWisdomAnimals.wisdomclient;
+package at.spengergasse.holzer.MicroserviceWisdomAnimals.services.client;
 
 import lombok.*;
 
@@ -15,5 +15,4 @@ public class QuoteDto {
 
     @Override
     public String toString(){ return "Quote{" + "number=" +number+ ", text="+text+"}"; }
-
 }

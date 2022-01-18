@@ -1,6 +1,7 @@
-package at.spengergasse.holzer.MicroserviceWisdomAnimals.wisdomclient;
+package at.spengergasse.holzer.MicroserviceWisdomAnimals.services.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -9,13 +10,11 @@ import java.util.Optional;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
+@Service
 @FeignClient(name="wisdom-service")
 public interface QuoteClient {
 
-    @GetMapping
-    public List<QuoteDto> findAll();
-
     @GetMapping(value = "/quotes/{number}", produces = APPLICATION_JSON_VALUE)
-    Optional<QuoteDto> findOne(@PathVariable long number);
+    Optional<QuoteDto> findOne(@PathVariable("number") long number);
 
 }

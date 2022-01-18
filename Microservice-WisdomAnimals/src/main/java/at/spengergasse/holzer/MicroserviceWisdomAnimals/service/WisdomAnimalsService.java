@@ -1,14 +1,17 @@
 package at.spengergasse.holzer.MicroserviceWisdomAnimals.service;
 
 
-import at.spengergasse.holzer.MicroserviceWisdomAnimals.wisdomclient.QuoteClient;
-import at.spengergasse.holzer.MicroserviceWisdomAnimals.wisdomclient.QuoteDto;
+import at.spengergasse.holzer.MicroserviceWisdomAnimals.services.client.AnimalClient;
+import at.spengergasse.holzer.MicroserviceWisdomAnimals.services.client.AnimalDto;
+import at.spengergasse.holzer.MicroserviceWisdomAnimals.services.client.QuoteClient;
+import at.spengergasse.holzer.MicroserviceWisdomAnimals.services.client.QuoteDto;
+import at.spengergasse.holzer.MicroserviceWisdomAnimals.services.WisdomAnimalDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
+
 
 @Service
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
@@ -17,10 +20,19 @@ public class WisdomAnimalsService {
     private static final int QUOTES_PER_ANIMAL = 3;
 
     private final QuoteClient quoteClient;
+    private final AnimalClient animalClient;
 
-    public List<String> generateWAFor(long animalNumber, long quoteNumber1, long quoteNumber2, long quoteNumber3){
-        Optional<QuoteDto> quoteDto = quoteClient.findOne(quoteNumber1);
+    public Optional<WisdomAnimalDto> generateWAFor(long animalNumber, long quoteNumber){
+        Optional<AnimalDto> animalDto = animalClient.findOne(animalNumber);
+        Optional<QuoteDto> quoteDto = quoteClient.findOne(quoteNumber);
 
-        return null;
+        Optional<WisdomAnimalDto> wisdomAnimalDto = Optional.ofNullable(WisdomAnimalDto.builder()
+                .numberAnimal(animalDto.get().getNumber())
+                .nameAnimal(animalDto.get().getName())
+                .artAnimal(animalDto.get().getArt())
+                .numberQuote(quoteDto.get().getNumber())
+                .textQuote(quoteDto.get().getText())
+                .build());
+        return wisdomAnimalDto;
     }
 }
