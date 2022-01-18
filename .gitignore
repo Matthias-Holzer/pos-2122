@@ -3,3 +3,6 @@ target
 .DS_Store
 *.iml
 **/target/
+**/mvnw
+**/mvnw.cmd
+
