@@ -25,10 +25,10 @@ public class WisdomAnimalsService {
         Optional<QuoteDto> quoteDto = quoteClient.findOne(quoteNumber);
 
         Optional<WisdomAnimalDto> wisdomAnimalDto = Optional.ofNullable(WisdomAnimalDto.builder()
-                .numberAnimal(animalDto.get().getNumber())
-                .nameAnimal(animalDto.get().getName())
+                //.numberAnimal(animalDto.get().getNumber())
+                //.nameAnimal(animalDto.get().getName())
                 .artAnimal(animalDto.get().getArt())
-                .numberQuote(quoteDto.get().getNumber())
+                //.numberQuote(quoteDto.get().getNumber())
                 .textQuote(quoteDto.get().getText())
                 .build());
         return wisdomAnimalDto.get();

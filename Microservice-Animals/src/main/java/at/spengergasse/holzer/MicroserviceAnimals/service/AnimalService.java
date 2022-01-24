@@ -19,13 +19,21 @@ public class AnimalService {
         this.animalRepository = animalRepository;
 
         List<Animal> animals = List.of(
-                Animal.builder().number(1).name("turtle").art("  /\\_/\\  (\n" +
+                Animal.builder().number(1).name("cat").art("  /\\_/\\  (\n" +
                         " ( ^.^ ) _)\n" +
                         "   \\\"/  (\n" +
                         " ( | | )\n" +
                         "(__d b__)").build(),
-                Animal.builder().number(23).name("turtle").art("asdf").build(),
-                Animal.builder().number(4).name("turtle").art("asdf").build(),
+                Animal.builder().number(2).name("dog").art("   / \\__\n" +
+                        "  (    @\\___\n" +
+                        "  /         O\n" +
+                        " /   (_____/\n" +
+                        "/_____/   U").build(),
+                Animal.builder().number(3).name("bat").art("       (_    ,_,    _) \n" +
+                        "       / `'--) (--'` \\\n" +
+                        "      /  _,-'\\_/'-,_  \\\n" +
+                        "     /.-'     \"     '-.\\\n" +
+                        "   ").build(),
                 Animal.builder().number(14).name("turtle").art("asdf").build()
         );
         for ( int i=0; i<animals.size(); i++){
