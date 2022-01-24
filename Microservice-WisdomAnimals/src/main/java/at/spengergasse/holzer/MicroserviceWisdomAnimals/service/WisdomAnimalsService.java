@@ -24,8 +24,6 @@ public class WisdomAnimalsService {
         Optional<AnimalDto> animalDto = animalClient.findOne(animalNumber);
         Optional<QuoteDto> quoteDto = quoteClient.findOne(quoteNumber);
 
-        System.out.println("HIIIER____________");
-
         Optional<WisdomAnimalDto> wisdomAnimalDto = Optional.ofNullable(WisdomAnimalDto.builder()
                 .numberAnimal(animalDto.get().getNumber())
                 .nameAnimal(animalDto.get().getName())

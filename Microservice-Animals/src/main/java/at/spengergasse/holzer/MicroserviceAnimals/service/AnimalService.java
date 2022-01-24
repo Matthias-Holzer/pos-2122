@@ -15,14 +15,25 @@ public class AnimalService {
 
     private final AnimalRepository animalRepository;
     @Autowired
-    public AnimalService(AnimalRepository animalRepository){ this.animalRepository = animalRepository; }
+    public AnimalService(AnimalRepository animalRepository){
+        this.animalRepository = animalRepository;
 
-    private List<Animal> animals = List.of(
-            Animal.builder().number(234).name("turtle").art("asdf").build(),
-            Animal.builder().number(23).name("turtle").art("asdf").build(),
-            Animal.builder().number(4).name("turtle").art("asdf").build(),
-            Animal.builder().number(14).name("turtle").art("asdf").build()
-    );
+        List<Animal> animals = List.of(
+                Animal.builder().number(1).name("turtle").art("  /\\_/\\  (\n" +
+                        " ( ^.^ ) _)\n" +
+                        "   \\\"/  (\n" +
+                        " ( | | )\n" +
+                        "(__d b__)").build(),
+                Animal.builder().number(23).name("turtle").art("asdf").build(),
+                Animal.builder().number(4).name("turtle").art("asdf").build(),
+                Animal.builder().number(14).name("turtle").art("asdf").build()
+        );
+        for ( int i=0; i<animals.size(); i++){
+            insert(AnimalDto.fromAnimal(animals.get(i)));
+        }
+    }
+
+
 
     public List<AnimalDto> findAll(){
         return StreamSupport.stream(animalRepository.findAll().spliterator(), false)
