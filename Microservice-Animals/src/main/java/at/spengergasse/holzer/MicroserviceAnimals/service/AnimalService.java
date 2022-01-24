@@ -34,7 +34,19 @@ public class AnimalService {
                         "      /  _,-'\\_/'-,_  \\\n" +
                         "     /.-'     \"     '-.\\\n" +
                         "   ").build(),
-                Animal.builder().number(14).name("turtle").art("asdf").build()
+                Animal.builder().number(4).name("whale").art(
+                        "                   \\    /\n" +
+                        "                    \\  /\n" +
+                        "|\\\\  //|             ||\n" +
+                        " \\ \\/  /             ||\n" +
+                        "  |   |              ||\n" +
+                        "  |   |              ||\n" +
+                        "   \\   \\------------------------\\\n" +
+                        "    \\                       o    \\\n" +
+                        "     \\-                           \\\n" +
+                        "      \\                 \\__________\\\n" +
+                        "       \\-                          /        Adam at Caltech\n" +
+                        "         \\________________________/").build()
         );
         for ( int i=0; i<animals.size(); i++){
             insert(AnimalDto.fromAnimal(animals.get(i)));

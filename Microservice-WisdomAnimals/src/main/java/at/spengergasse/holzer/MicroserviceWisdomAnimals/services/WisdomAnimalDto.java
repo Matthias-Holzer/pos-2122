@@ -26,22 +26,13 @@ public class WisdomAnimalDto {
         this.textQuote = textQuote;
     }
      */
-    private String line1 = "";
-    private String line2 = "";
-    private String line3 = "";
-    private String line4 = "";
-    private String line5 = "";
+    private String[] art;
     private String textQuote;
 
     @Builder
     public WisdomAnimalDto(String artAnimal, String textQuote) {
         String[] lines = artAnimal.split("\n");
-
-        this.line1 = lines[0];
-        this.line2 = lines[1];
-        this.line3 = lines[2];
-        this.line4 = lines[3];
-        this.line5 = lines[4];
+        this.art = lines;
         this.textQuote = textQuote;
     }
 }

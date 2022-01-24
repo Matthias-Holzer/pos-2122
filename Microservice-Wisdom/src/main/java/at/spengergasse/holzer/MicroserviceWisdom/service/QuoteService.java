@@ -20,9 +20,9 @@ public class QuoteService {
         this.quoteRepository = quoteRepository;
 
         List<Quote> quotes = List.of(
-                Quote.builder().number(89).text("The early bird caches the worm").build(),
-                Quote.builder().number(45).text("Even the chicken in the pan gets crazy").build(),
-                Quote.builder().number(69).text("Live is like a box of chocolates, you are screwed if you have diabetes").build()
+                Quote.builder().number(1).text("The early bird caches the worm").build(),
+                Quote.builder().number(2).text("Even the chicken in the pan gets crazy").build(),
+                Quote.builder().number(3).text("Live is like a box of chocolates, you are screwed if you have diabetes").build()
         );
         for ( int i=0; i<quotes.size(); i++){
             insert(QuoteDto.fromQuote(quotes.get(i)));
