@@ -23,7 +23,7 @@ public class WisdomAnimalController {
     }
 
     @GetMapping("/{number1}/{number2}")
-    public Optional<WisdomAnimalDto> generate(@PathVariable("number1") long numberAnimal, @PathVariable("number2") long numberQuote){
+    public WisdomAnimalDto generate(@PathVariable("number1") long numberAnimal, @PathVariable("number2") long numberQuote){
         return wisdomAnimalsService.generateWAFor(numberAnimal, numberQuote);
     }
 }

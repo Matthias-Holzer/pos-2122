@@ -16,13 +16,17 @@ public class QuoteService {
 
     private final QuoteRepository quoteRepository;
     @Autowired
-    public QuoteService(QuoteRepository quoteRepository) { this.quoteRepository = quoteRepository; }
+    public QuoteService(QuoteRepository quoteRepository) {
+        this.quoteRepository = quoteRepository;
 
-    private List<Quote> quotes = List.of(
-      Quote.builder().number(89).text("The early bird caches the worm").build(),
-      Quote.builder().number(45).text("Even the chicken in the pan gets crazy").build(),
-      Quote.builder().number(69).text("Live is like a box of chocolates, you are screwed if you have diabetes").build()
-    );
+        List<Quote> quotes = List.of(
+                Quote.builder().number(89).text("The early bird caches the worm").build(),
+                Quote.builder().number(45).text("Even the chicken in the pan gets crazy").build(),
+                Quote.builder().number(69).text("Live is like a box of chocolates, you are screwed if you have diabetes").build()
+        );
+    }
+
+
 
     public List<QuoteDto> findAll(){
         return StreamSupport.stream(quoteRepository.findAll().spliterator(), false)

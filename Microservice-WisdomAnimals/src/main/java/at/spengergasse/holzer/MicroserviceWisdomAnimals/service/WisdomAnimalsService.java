@@ -17,14 +17,14 @@ import java.util.Optional;
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class WisdomAnimalsService {
 
-    private static final int QUOTES_PER_ANIMAL = 3;
-
     private final QuoteClient quoteClient;
     private final AnimalClient animalClient;
 
-    public Optional<WisdomAnimalDto> generateWAFor(long animalNumber, long quoteNumber){
+    public WisdomAnimalDto generateWAFor(long animalNumber, long quoteNumber){
         Optional<AnimalDto> animalDto = animalClient.findOne(animalNumber);
         Optional<QuoteDto> quoteDto = quoteClient.findOne(quoteNumber);
+
+        System.out.println("HIIIER____________");
 
         Optional<WisdomAnimalDto> wisdomAnimalDto = Optional.ofNullable(WisdomAnimalDto.builder()
                 .numberAnimal(animalDto.get().getNumber())
@@ -33,6 +33,6 @@ public class WisdomAnimalsService {
                 .numberQuote(quoteDto.get().getNumber())
                 .textQuote(quoteDto.get().getText())
                 .build());
-        return wisdomAnimalDto;
+        return wisdomAnimalDto.get();
     }
 }

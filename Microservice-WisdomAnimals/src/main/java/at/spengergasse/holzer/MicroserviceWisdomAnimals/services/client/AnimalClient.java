@@ -9,7 +9,7 @@ import java.util.Optional;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-@FeignClient(name = "animal-service")
+@FeignClient(name = "ANIMAL-SERVICE")
 public interface AnimalClient {
 
     @GetMapping(value = "/animals/{number}", produces = APPLICATION_JSON_VALUE)
