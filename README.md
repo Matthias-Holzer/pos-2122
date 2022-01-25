@@ -1,6 +1,8 @@
 # Wisdom Animals
 by Matthias Holzer
 
+(asci art from https://mkyong.com/java/ascii-art-java-example/ and https://www.asciiart.eu/animals)
+
 ## A microservice spring boot application
 * feature/s1-f2_multimodule_build
 * feature/s1-f3_introducing_feign
