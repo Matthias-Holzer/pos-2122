@@ -26,4 +26,9 @@ public class WisdomAnimalController {
     public WisdomAnimalDto generate(@PathVariable("number1") long numberAnimal, @PathVariable("number2") long numberQuote){
         return wisdomAnimalsService.generateWAFor(numberAnimal, numberQuote);
     }
+
+    @GetMapping("/random")
+    public WisdomAnimalDto generateRandom(){
+        return wisdomAnimalsService.generateWAForRandom();
+    }
 }

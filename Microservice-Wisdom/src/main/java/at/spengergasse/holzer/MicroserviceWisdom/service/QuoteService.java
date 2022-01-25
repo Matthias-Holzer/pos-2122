@@ -63,4 +63,16 @@ public class QuoteService {
     public void delete(long number){
         quoteRepository.deleteByNumber(number);
     }
+
+    public QuoteDto random(){
+        QuoteDto quoteDto = null;
+        while (quoteDto == null){
+            long am = quoteRepository.countQuoteByTextIsNotNull();
+            int number = (int) (Math.random() * am);
+            quoteDto =  quoteRepository.findByNumber(number)
+                    .map(QuoteDto::fromQuote)
+                    .orElse(null);
+        }
+        return quoteDto;
+    }
 }

@@ -33,4 +33,17 @@ public class WisdomAnimalsService {
                 .build());
         return wisdomAnimalDto.get();
     }
+
+    public WisdomAnimalDto generateWAForRandom(){
+        Optional<AnimalDto> animalDto = animalClient.random();
+        Optional<QuoteDto> quoteDto = quoteClient.random();
+        Optional<WisdomAnimalDto> wisdomAnimalDto = Optional.ofNullable(WisdomAnimalDto.builder()
+                //.numberAnimal(animalDto.get().getNumber())
+                //.nameAnimal(animalDto.get().getName())
+                .artAnimal(animalDto.get().getArt())
+                //.numberQuote(quoteDto.get().getNumber())
+                .textQuote(quoteDto.get().getText())
+                .build());
+        return wisdomAnimalDto.get();
+    }
 }

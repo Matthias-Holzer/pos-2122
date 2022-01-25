@@ -10,4 +10,5 @@ import java.util.Optional;
 public interface QuoteRepository extends CrudRepository<Quote, Long> {
     Optional<Quote> findByNumber(long number);
     void deleteByNumber(long number);
+    long countQuoteByTextIsNotNull();
 }

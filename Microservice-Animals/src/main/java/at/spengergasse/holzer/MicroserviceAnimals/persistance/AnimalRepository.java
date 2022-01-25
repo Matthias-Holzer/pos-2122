@@ -10,4 +10,6 @@ import java.util.Optional;
 public interface AnimalRepository extends CrudRepository<Animal, Long> {
     Optional<Animal> findByNumber(long number);
     void deleteByNumber(long number);
+    long countAllBy();
+    long countAnimalsByArtIsNotNull();
 }

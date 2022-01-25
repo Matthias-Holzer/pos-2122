@@ -32,4 +32,9 @@ public class QuoteController {
 
     @DeleteMapping(path="/{number}")
     public void delete(@PathVariable long number){ quoteService.delete(number); }
+
+    @GetMapping(path = "/random")
+    public QuoteDto findRandom(){
+        return quoteService.random();
+    }
 }

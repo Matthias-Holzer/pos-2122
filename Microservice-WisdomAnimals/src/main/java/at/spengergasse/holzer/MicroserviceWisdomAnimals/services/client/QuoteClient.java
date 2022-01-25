@@ -17,4 +17,6 @@ public interface QuoteClient {
     @GetMapping(value = "/quotes/{number}", produces = APPLICATION_JSON_VALUE)
     Optional<QuoteDto> findOne(@PathVariable("number") long number);
 
+    @GetMapping(value = "/quotes/random")
+    Optional<QuoteDto> random();
 }

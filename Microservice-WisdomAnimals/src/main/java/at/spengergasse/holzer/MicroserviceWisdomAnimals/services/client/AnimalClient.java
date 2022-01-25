@@ -13,5 +13,8 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 public interface AnimalClient {
 
     @GetMapping(value = "/animals/{number}", produces = APPLICATION_JSON_VALUE)
-    public Optional<AnimalDto> findOne(@PathVariable long number);
+    Optional<AnimalDto> findOne(@PathVariable long number);
+
+    @GetMapping(value = "/animals/random")
+    Optional<AnimalDto> random();
 }

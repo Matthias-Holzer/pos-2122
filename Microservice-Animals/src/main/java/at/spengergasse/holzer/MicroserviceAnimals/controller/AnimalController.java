@@ -2,12 +2,10 @@ package at.spengergasse.holzer.MicroserviceAnimals.controller;
 
 import at.spengergasse.holzer.MicroserviceAnimals.service.AnimalDto;
 import at.spengergasse.holzer.MicroserviceAnimals.service.AnimalService;
-import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.Column;
 import java.util.List;
 
 @RestController
@@ -33,4 +31,7 @@ public class AnimalController extends AbstractPersistable<Long> {
 
     @DeleteMapping(path="/{number}")
     public void delete(@PathVariable long number){ animalService.delete(number); }
+
+    @GetMapping("/random")
+    public AnimalDto findRandom(){ return animalService.random(); }
 }

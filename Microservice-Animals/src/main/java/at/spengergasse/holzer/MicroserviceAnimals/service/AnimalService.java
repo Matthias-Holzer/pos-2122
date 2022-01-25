@@ -82,4 +82,16 @@ public class AnimalService {
                 .orElse(null);
     }
     public void delete(long number){animalRepository.deleteByNumber(number);}
+
+    public AnimalDto random(){
+        AnimalDto animalDto = null;
+        while (animalDto == null) {
+            long qty = animalRepository.countAnimalsByArtIsNotNull();
+            int number = (int) (Math.random() * qty);
+            animalDto = animalRepository.findByNumber(number)
+                    .map(AnimalDto::fromAnimal)
+                    .orElse(null);
+        }
+        return animalDto;
+    }
 }
