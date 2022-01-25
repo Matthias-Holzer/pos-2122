@@ -30,3 +30,6 @@ out by eureka.
 
 ## circuit breaker fallback
 ![fallback](screenshots/fallback.png)
+
+## config server
+![config](screenshots/config-server.png)
