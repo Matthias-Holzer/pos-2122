@@ -5,6 +5,7 @@ by Matthias Holzer
 * feature/s1-f2_multimodule_build
 * feature/s1-f3_introducing_feign
 * feature/s1-f4_service_registry
+* feature/s1-f5_circuit_breaker
 
 ## Idea
 Generating Calendar Quotes with a sweet ascii 
@@ -24,3 +25,6 @@ In production, they will all be set to 0, and handed
 out by eureka.
 
 ![eureka.png](screenshots/eureka.png)
+
+## circuit breaker fallback
+![fallback](screenshots/fallback.png)
