@@ -8,6 +8,7 @@ by Matthias Holzer
 * feature/s1-f3_introducing_feign
 * feature/s1-f4_service_registry
 * feature/s1-f5_circuit_breaker
+* feature/s1-f6_config_server
 
 ## Idea
 Generating Calendar Quotes with a sweet ascii 
